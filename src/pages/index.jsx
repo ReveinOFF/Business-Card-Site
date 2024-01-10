@@ -4,13 +4,14 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>MessageMoment - The real meaning to personal!</title>
+        <title>Revie - Welcome</title>
         <meta
           name="description"
-          content="MessageMoment - The real meaning to personal!"
+          content="Исследуйте мир моих идей, проектов и вдохновения на главной странице моего сайта-визитки и блога."
         />
+        <meta name="keywords" content="" />
       </Head>
-      <main></main>
+      <main className="bg-zinc-700"></main>
     </>
   );
 }

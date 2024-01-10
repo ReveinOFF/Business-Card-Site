@@ -25,8 +25,10 @@ export default function Header() {
   }, [showLng]);
 
   return (
-    <header className="sticky top-3 flex items-center justify-between px-10 py-5 border-2 border-red-700 rounded-lg m-5">
-      <Image src="/images/avatar.png" alt="avatar" width="50" height="50" />
+    <header className="sticky top-3 flex items-center justify-between px-10 py-5 border-2 border-red-700 rounded-lg my-5">
+      <Link href="/">
+        <Image src="/images/avatar.png" alt="avatar" width="50" height="50" />
+      </Link>
       <nav className="hidden md:block">
         <Link
           className={`page-select ${

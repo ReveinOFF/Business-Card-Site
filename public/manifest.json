@@ -1,0 +1,16 @@
+{
+  "name": "Revie",
+  "short_name": "R",
+  "description": "Awesome Web Application",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ff0000",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
