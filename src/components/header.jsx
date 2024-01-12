@@ -1,12 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useTranslation, i18n } from "next-i18next";
+import { i18n as i18nconfig } from "../../next-i18next.config.js";
+import { useRouter } from "next/router.js";
+import { saveLanguageToLocalStorage } from "@/utils/translations.jsx";
 
 export default function Header() {
   const [showLng, setShowLng] = useState(false);
   const [showBurger, setShowBurger] = useState(false);
-  const pathname = usePathname();
+  const { t } = useTranslation();
+  const router = useRouter();
+  const { pathname, query } = router;
 
   const changeShowLng = (e) => {
     if (!e.target.closest(".c-lng")) setShowLng(false);
@@ -25,8 +30,8 @@ export default function Header() {
   }, [showLng]);
 
   return (
-    <header className="sticky top-3 flex items-center justify-between px-10 py-5 border-2 border-red-700 rounded-lg my-5">
-      <Link href="/">
+    <header className="sticky top-3 flex items-center justify-between px-10 py-5 mx-5 border-2 border-red-700 rounded-lg my-5">
+      <Link href="/" className="focus:outline-none">
         <Image src="/images/avatar.png" alt="avatar" width="50" height="50" />
       </Link>
       <nav className="hidden md:block">
@@ -36,7 +41,7 @@ export default function Header() {
           }`}
           href="/"
         >
-          HOME
+          {t("header.home")}
         </Link>
         <Link
           className={`page-select ${
@@ -44,7 +49,7 @@ export default function Header() {
           }`}
           href="/portfolio"
         >
-          PORTFOLIO
+          {t("header.portfolio")}
         </Link>
         <Link
           className={`page-select ${
@@ -52,15 +57,15 @@ export default function Header() {
           }`}
           href="/about"
         >
-          ABOUT ME
+          {t("header.about")}
         </Link>
         <Link
           className={`page-select ${
             pathname == "/contact" ? "text-red-700" : "hover:text-red-500"
           }`}
-          href="/contact"
+          href="/contacts"
         >
-          CONTACT
+          {t("header.contacts")}
         </Link>
       </nav>
       <div className="relative hidden md:block">
@@ -72,7 +77,7 @@ export default function Header() {
           }`}
           onClick={() => setShowLng(!showLng)}
         >
-          EN
+          {i18n?.language?.toLocaleUpperCase()}
         </button>
         <div
           className={`c-lng border-2 rounded-lg absolute mt-2 bg-black transition duration-200 ${
@@ -81,9 +86,24 @@ export default function Header() {
               : "opacity-0 -translate-y-1/3 pointer-events-none"
           }`}
         >
-          <button className="c-lng lang-select">EN</button>
-          <button className="c-lng lang-select">RU</button>
-          <button className="c-lng lang-select">UA</button>
+          {i18nconfig?.locales
+            ?.filter((item) => item !== i18n?.language)
+            .map((item, index) => (
+              <button
+                onClick={() => {
+                  saveLanguageToLocalStorage(item);
+                  router.push({ pathname, query }, undefined, {
+                    locale: item,
+                  });
+                  i18n.changeLanguage(item);
+                  setShowLng(false);
+                }}
+                key={index}
+                className="c-lng lang-select"
+              >
+                {item.toLocaleUpperCase()}
+              </button>
+            ))}
         </div>
       </div>
       <div className="md:hidden" onClick={() => setShowBurger(true)}>
