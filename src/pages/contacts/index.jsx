@@ -4,12 +4,11 @@ import { useTranslation } from "next-i18next";
 
 export default function Contact() {
   const { t } = useTranslation();
-  const title = `Revie - ${t("meta.contacts.title")}`;
 
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>{t("meta.contacts.title")}</title>
         <meta name="description" content={t("meta.contacts.description")} />
         <meta name="keywords" content={t("meta.contacts.keywords")} />
       </Head>

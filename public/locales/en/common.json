@@ -7,23 +7,28 @@
   },
   "meta": {
     "home": {
-      "title": "Welcome",
+      "title": "Revie - Welcome",
       "description": "Explore the world of my ideas, projects and inspiration on the homepage of my business card site and blog.",
       "keywords": "dddda"
     },
     "about": {
-      "title": "Find out about me",
+      "title": "Revie - Find out about me",
       "description": "Open the 'About Me' page to learn more about my creative journey, hobbies and goals. Welcome to my virtual world!",
       "keywords": "dddda"
     },
     "contacts": {
-      "title": "Contact me",
+      "title": "Revie - Contact me",
       "description": "On the contact page you will find everything you need to contact me. Share your questions, suggestions or just write hello!",
       "keywords": "dddda"
     },
     "portfolio": {
-      "title": "My portfolio",
+      "title": "Revie - My portfolio",
       "description": "An overview of my best projects, ideas and achievements. Immerse yourself in the world of my work presented in the portfolio on this page.",
+      "keywords": "dddda"
+    },
+    "notfound": {
+      "title": "Revie - Page not found",
+      "description": "Something went wrong and we couldn't find this page, please try again later or contact the owner.",
       "keywords": "dddda"
     }
   },

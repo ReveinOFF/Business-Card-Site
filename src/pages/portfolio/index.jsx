@@ -4,12 +4,11 @@ import { useTranslation } from "next-i18next";
 
 export default function Portfolio() {
   const { t } = useTranslation();
-  const title = `Revie - ${t("meta.portfolio.title")}`;
 
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>{t("meta.portfolio.title")}</title>
         <meta name="description" content={t("meta.portfolio.description")} />
         <meta name="keywords" content={t("meta.portfolio.keywords")} />
       </Head>
