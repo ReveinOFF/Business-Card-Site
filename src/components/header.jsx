@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useTranslation, i18n } from "next-i18next";
 import { useRouter } from "next/router.js";
+import { ScrollContext } from "@/pages/_app";
 
 export default function Header() {
   const [showLng, setShowLng] = useState(false);
@@ -10,6 +11,7 @@ export default function Header() {
   const { t } = useTranslation();
   const router = useRouter();
   const { pathname, query } = router;
+  const setIsScroll = useContext(ScrollContext);
 
   const changeShowLng = (e) => {
     if (!e.target.closest(".c-lng")) setShowLng(false);
@@ -103,9 +105,22 @@ export default function Header() {
             ))}
         </div>
       </div>
-      <div className="md:hidden" onClick={() => setShowBurger(true)}>
-        <div className="relative w-7 bg-white h-0.5 rounded-lg after:content-[''] after:absolute after:rounded-lg after:top-2 after:w-full after:h-0.5 after:bg-white before:content-[''] before:absolute before:rounded-lg before:bottom-2 before:w-full before:h-0.5 before:bg-white"></div>
+      <div
+        className="md:hidden cursor-pointer"
+        onClick={() => {
+          setShowBurger(true);
+          setIsScroll(false);
+        }}
+      >
+        <div className="w-7 bg-white h-0.5 rounded-lg"></div>
+        <div className="w-7 bg-white h-0.5 rounded-lg my-1.5"></div>
+        <div className="w-7 bg-white h-0.5 rounded-lg"></div>
       </div>
+      <div
+        className={`${
+          showBurger ? "visible right-0" : "invisible"
+        } fixed md:hidden top-0 bottom-0 w-80 bg-slate-600`}
+      ></div>
     </header>
   );
 }
