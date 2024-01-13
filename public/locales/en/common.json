@@ -1,9 +1,9 @@
 {
   "header": {
-    "home": "HOME",
-    "portfolio": "PORTFOLIO",
-    "about": "ABOUT ME",
-    "contacts": "CONTACTS"
+    "home": "Home",
+    "portfolio": "Portfolio",
+    "about": "About Me",
+    "contacts": "Contacts"
   },
   "meta": {
     "home": {
@@ -33,6 +33,7 @@
     }
   },
   "footer": {
+    "top": "Welcome to my website! Here you will find information about my services, a portfolio where I share my experience and news in web development. Ready to get started or discuss a project? Contact me!",
     "bottom": "all rights reserved"
   }
 }

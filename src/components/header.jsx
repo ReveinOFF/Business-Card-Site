@@ -39,7 +39,7 @@ export default function Header() {
           }`}
           href="/"
         >
-          {t("header.home")}
+          {t("header.home").toLocaleUpperCase()}
         </Link>
         <Link
           className={`page-select ${
@@ -47,7 +47,7 @@ export default function Header() {
           }`}
           href="/portfolio"
         >
-          {t("header.portfolio")}
+          {t("header.portfolio").toLocaleUpperCase()}
         </Link>
         <Link
           className={`page-select ${
@@ -55,7 +55,7 @@ export default function Header() {
           }`}
           href="/about"
         >
-          {t("header.about")}
+          {t("header.about").toLocaleUpperCase()}
         </Link>
         <Link
           className={`page-select ${
@@ -63,7 +63,7 @@ export default function Header() {
           }`}
           href="/contacts"
         >
-          {t("header.contacts")}
+          {t("header.contacts").toLocaleUpperCase()}
         </Link>
       </nav>
       <div className="relative hidden md:block">

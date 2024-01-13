@@ -1,5 +1,7 @@
 import { useMemo } from "react";
 import { useTranslation } from "next-i18next";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -10,25 +12,66 @@ export default function Footer() {
 
   return (
     <footer>
-      <div className="footer mb-1 bg-zinc-800 grid grid-cols-3 justify-items-center">
-        <div>
-          <h3>TEMP</h3>
-          <div></div>
-          <div></div>
-        </div>
-        <div>
-          <h3>REVIE</h3>
-          <div></div>
-          <div></div>
-        </div>
-        <div>
-          <h3>КОНТАКТИ</h3>
-          <div></div>
-          <div></div>
+      <div className="footer hidden sm:flex mt-5 bg-zinc-800 flex-col items-center">
+        <h1 className="mb-3 text-2xl">REVIE</h1>
+        <div className="text-center max-w-4xl mb-3 text">{t("footer.top")}</div>
+        <div className="flex">
+          <Link
+            href="https://github.com/RonniePlay"
+            target="_blank"
+            className="mr-3 svg"
+          >
+            <Image
+              src="/images/footer/github.svg"
+              width="40"
+              height="40"
+              alt="github"
+            />
+          </Link>
+          <Link
+            href="https://www.instagram.com/romatop007/"
+            target="_blank"
+            className="mr-3 svg"
+          >
+            <Image
+              src="/images/footer/instagram.svg"
+              width="40"
+              height="40"
+              alt="instagram"
+            />
+          </Link>
+          <Link
+            href="mailto:ronnieplayyt@gmail.com"
+            target="_blank"
+            className="svg"
+          >
+            <Image
+              src="/images/footer/gmail.svg"
+              width="40"
+              height="40"
+              alt="gmail"
+            />
+          </Link>
         </div>
       </div>
-      <div className="footer text-center bg-zinc-900 my-0">
-        &#169; {year} Revie, {t("footer.bottom")}
+      <div className="footer flex justify-center sm:justify-between bg-zinc-900 my-0">
+        <div>
+          &#169; {year} Revie, {t("footer.bottom")}
+        </div>
+        <div className="hidden sm:block">
+          <Link className="footer-pages" href="/">
+            {t("header.home")}
+          </Link>
+          <Link className="footer-pages" href="/about">
+            {t("header.about")}
+          </Link>
+          <Link className="footer-pages" href="/contacts">
+            {t("header.contacts")}
+          </Link>
+          <Link className="hover:text-red-500" href="/portfolio">
+            {t("header.portfolio")}
+          </Link>
+        </div>
       </div>
     </footer>
   );
