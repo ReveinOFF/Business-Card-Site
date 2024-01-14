@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
-import Loading from "./loading";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -13,9 +12,7 @@ export default function Home() {
         <meta name="description" content={t("meta.home.description")} />
         <meta name="keywords" content={t("meta.home.keywords")} />
       </Head>
-      <div>
-        <Loading />
-      </div>
+      <div></div>
     </>
   );
 }
