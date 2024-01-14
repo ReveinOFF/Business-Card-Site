@@ -68,7 +68,7 @@ export default function Header() {
         </Link>
         <Link
           className={`page-select ${
-            pathname == "/contact" ? "text-red-700" : "hover:text-red-500"
+            pathname == "/contacts" ? "text-red-700" : "hover:text-red-500"
           }`}
           href="/contacts"
         >
