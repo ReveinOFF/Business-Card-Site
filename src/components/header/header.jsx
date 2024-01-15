@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { useTranslation, i18n } from "next-i18next";
 import { useRouter } from "next/router.js";
 import { ScrollContext } from "@/pages/_app";
+import styles from "./headerStyle.module.css";
 
 export default function Header() {
   const [showLng, setShowLng] = useState(false);
@@ -40,7 +41,7 @@ export default function Header() {
   }, [showLng]);
 
   return (
-    <header className="sticky bg-zinc-950 bg-opacity-70 top-3 flex items-center justify-between px-10 py-5 mx-5 border-2 border-red-700 rounded-lg my-5">
+    <header className="sticky bg-zinc-950 bg-opacity-95 top-3 flex items-center justify-between px-10 py-5 mx-5 border-2 border-red-700 rounded-lg my-5">
       <Link href="/" className="focus:outline-none">
         <Image
           src="/images/header/avatar.png"
@@ -51,7 +52,7 @@ export default function Header() {
       </Link>
       <nav className="hidden md:block font-tthb">
         <Link
-          className={`page-select ${
+          className={`${styles.page_select} ${
             pathname == "/" ? "text-red-700" : "hover:text-red-500"
           }`}
           href="/"
@@ -59,7 +60,7 @@ export default function Header() {
           {t("header.home").toLocaleUpperCase()}
         </Link>
         <Link
-          className={`page-select ${
+          className={`${styles.page_select} ${
             pathname == "/about" ? "text-red-700" : "hover:text-red-500"
           }`}
           href="/about"
@@ -67,7 +68,7 @@ export default function Header() {
           {t("header.about").toLocaleUpperCase()}
         </Link>
         <Link
-          className={`page-select ${
+          className={`${styles.page_select} ${
             pathname == "/contacts" ? "text-red-700" : "hover:text-red-500"
           }`}
           href="/contacts"
@@ -75,7 +76,7 @@ export default function Header() {
           {t("header.contacts").toLocaleUpperCase()}
         </Link>
         <Link
-          className={`page-select ${
+          className={`${styles.page_select} ${
             pathname == "/portfolio" ? "text-red-700" : "hover:text-red-500"
           }`}
           href="/portfolio"
@@ -107,7 +108,7 @@ export default function Header() {
               <button
                 onClick={() => changeLanguage(item)}
                 key={index}
-                className="c-lng lang-select"
+                className="c-lng px-3 py-1 hover:text-red-500"
               >
                 {item.toLocaleUpperCase()}
               </button>
@@ -151,8 +152,8 @@ export default function Header() {
           </button>
           <div className="text-center text-2xl font-tthb">REVIE</div>
         </div>
-        <nav className="m-5 font-sans tracking-wider">
-          <Link href="/" className="sidebar-pages">
+        <nav className="m-5 opensans">
+          <Link href="/" className={styles.sidebar_pages}>
             <Image
               src="/images/header/home.svg"
               width="25"
@@ -162,7 +163,7 @@ export default function Header() {
             />
             <div>{t("header.home")}</div>
           </Link>
-          <Link href="/about" className="sidebar-pages">
+          <Link href="/about" className={styles.sidebar_pages}>
             <Image
               src="/images/header/about.svg"
               width="25"
@@ -172,7 +173,7 @@ export default function Header() {
             />
             <div>{t("header.about")}</div>
           </Link>
-          <Link href="/contacts" className="sidebar-pages">
+          <Link href="/contacts" className={styles.sidebar_pages}>
             <Image
               src="/images/header/contacts.svg"
               width="25"
@@ -182,7 +183,7 @@ export default function Header() {
             />
             <div>{t("header.contacts")}</div>
           </Link>
-          <Link href="/portfolio" className="sidebar-pages">
+          <Link href="/portfolio" className={styles.sidebar_pages}>
             <Image
               src="/images/header/portfolio.svg"
               width="25"

@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
+import Header from "@/components/header/header";
+import Footer from "@/components/footer/footer";
 import { appWithTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { createContext, useEffect, useState } from "react";

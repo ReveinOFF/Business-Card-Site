@@ -2,36 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-.lang-select {
-  @apply px-3 py-1 hover:text-red-500;
-}
-
-.sidebar-pages {
-  @apply flex p-4 hover:bg-zinc-700 rounded-lg items-center text-lg;
-}
-
-.page-select {
-  @apply px-3 py-3;
-}
-
 .outlined-text {
   text-shadow: -1px -1px 0px #fca5a5, 1px 1px 0px #ff005a;
 }
 
-.footer-pages {
-  @apply mr-3 hover:text-red-500;
-}
-
-.svg {
-  transition: 0.1s;
-}
-.svg:hover {
-  filter: invert(33%) sepia(95%) saturate(838%) hue-rotate(330deg)
-    brightness(108%) contrast(88%);
-}
-
 @layer components {
-  .footer {
-    @apply p-5;
+  .opensans {
+    @apply font-sans tracking-widest;
   }
 }

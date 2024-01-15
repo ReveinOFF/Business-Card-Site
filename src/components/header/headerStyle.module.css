@@ -1,0 +1,7 @@
+.sidebar_pages {
+  @apply flex p-4 hover:bg-zinc-700 rounded-lg items-center text-lg;
+}
+
+.page_select {
+  @apply px-3 py-3;
+}
