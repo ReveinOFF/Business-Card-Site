@@ -20,6 +20,11 @@ module.exports = {
         low: "-4px",
         2: "0.2em",
       },
+      fontFamily: {
+        sans: ["var(--font-open-sans)"],
+        tthb: ["var(--font-tthoves-bold)"],
+        tthxb: ["var(--font-tthoves-xbold)"],
+      },
     },
   },
   plugins: [],

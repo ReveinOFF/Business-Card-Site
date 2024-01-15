@@ -13,8 +13,10 @@ export default function Footer() {
   return (
     <footer>
       <div className="footer hidden sm:flex mt-5 bg-zinc-800 flex-col items-center">
-        <h1 className="mb-3 text-2xl">REVIE</h1>
-        <div className="text-center max-w-4xl mb-3 text">{t("footer.top")}</div>
+        <h1 className="mb-3 text-2xl font-tthxb">REVIE</h1>
+        <div className="text-center max-w-4xl mb-3 text font-sans tracking-wider">
+          {t("footer.top")}
+        </div>
         <div className="flex">
           <Link
             href="https://github.com/RonniePlay"
@@ -54,7 +56,7 @@ export default function Footer() {
           </Link>
         </div>
       </div>
-      <div className="footer flex justify-center sm:justify-between bg-zinc-900 my-0">
+      <div className="footer flex justify-center sm:justify-between bg-zinc-900 my-0 font-sans tracking-wider">
         <div>
           &#169; {year} Revie, {t("footer.bottom")}
         </div>

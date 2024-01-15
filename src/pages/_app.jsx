@@ -5,6 +5,7 @@ import { appWithTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { createContext, useEffect, useState } from "react";
 import Loading from "./loading";
+import { OpenSans, TTHovesB, TTHovesXB } from "@/utils/fonts";
 
 export const ScrollContext = createContext();
 
@@ -39,8 +40,10 @@ function App({ Component, pageProps }) {
     <ScrollContext.Provider value={setIsScroll}>
       {loading && <Loading />}
       <div
-        className={`${
-          isScroll ? "overflow-auto" : "overflow-hidden"
+        className={`${isScroll ? "overflow-auto" : "overflow-hidden"} ${
+          TTHovesB.variable
+        } ${TTHovesXB.variable} ${
+          OpenSans.variable
         } h-screen grid grid-rows-[auto_1fr_auto]`}
       >
         {router.pathname !== "/404" && <Header />}

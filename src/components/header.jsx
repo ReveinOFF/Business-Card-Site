@@ -49,7 +49,7 @@ export default function Header() {
           height="50"
         />
       </Link>
-      <nav className="hidden md:block">
+      <nav className="hidden md:block font-tthb">
         <Link
           className={`page-select ${
             pathname == "/" ? "text-red-700" : "hover:text-red-500"
@@ -83,7 +83,7 @@ export default function Header() {
           {t("header.portfolio").toLocaleUpperCase()}
         </Link>
       </nav>
-      <div className="relative hidden md:block">
+      <div className={`relative hidden md:block font-tthb`}>
         <button
           className={`c-lng border-2 px-3 py-1 rounded-lg pb-1.5 transition duration-200 ${
             showLng
@@ -149,9 +149,9 @@ export default function Header() {
             <div className="w-7 rotate-45 -translate-y-0.5 bg-white h-0.5 rounded-lg"></div>
             <div className="w-7 -rotate-45 -translate-y-1 bg-white h-0.5 rounded-lg"></div>
           </button>
-          <div className="text-center text-2xl">REVIE</div>
+          <div className="text-center text-2xl font-tthb">REVIE</div>
         </div>
-        <nav className="m-5">
+        <nav className="m-5 font-sans tracking-wider">
           <Link href="/" className="sidebar-pages">
             <Image
               src="/images/header/home.svg"
@@ -193,7 +193,7 @@ export default function Header() {
             <div>{t("header.portfolio")}</div>
           </Link>
         </nav>
-        <div className="m-5 mt-0 relative">
+        <div className="m-5 mt-0 relative font-tthb">
           <div className="absolute bottom-20 w-full">
             {router.locales
               .filter((item) => item !== router.locale)
