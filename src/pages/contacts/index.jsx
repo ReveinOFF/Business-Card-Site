@@ -3,9 +3,20 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import styles from "./contactsStyle.module.css";
+import useForm from "@/hooks/form/useForm";
 
 export default function Contact() {
   const { t } = useTranslation();
+  const { values, errors, submited, checkValue, handleChange, setSubmited } =
+    useForm();
+
+  const handleSubmite = (e) => {
+    e.preventDefault();
+    setSubmited(true);
+    if (!checkValue()) {
+      console.log("done");
+    }
+  };
 
   return (
     <>
@@ -15,10 +26,10 @@ export default function Contact() {
         <meta name="keywords" content={t("meta.contacts.keywords")} />
       </Head>
       <h1 className="text-center font-tthxb text-5xl tracking-wide my-3 text-red-700">
-        CONTACTS
+        {t("contacts.title")}
       </h1>
       <p className="text-center opensans text-lg font-bold tracking-2 mb-10">
-        I'M AT YOUR SERVICES
+        {t("contacts.description")}
       </p>
       <div className="flex justify-evenly text-center opensans items-end">
         <div>
@@ -29,7 +40,7 @@ export default function Contact() {
             alt="call"
             className="mx-auto mb-2"
           />
-          <div className="font-bold">Call Me On</div>
+          <div className="font-bold">{t("contacts.call")}</div>
           <div>+380977852315</div>
         </div>
         <div>
@@ -40,8 +51,8 @@ export default function Contact() {
             alt="point"
             className="mx-auto mb-2"
           />
-          <div className="font-bold">Living</div>
-          <div>Ukraine</div>
+          <div className="font-bold">{t("contacts.living")}</div>
+          <div>{t("contacts.country")}</div>
         </div>
         <div>
           <Image
@@ -51,7 +62,7 @@ export default function Contact() {
             alt="email"
             className="mx-auto mb-2"
           />
-          <div className="font-bold">Email</div>
+          <div className="font-bold">{t("contacts.email")}</div>
           <div>ronnieplayyt@gmail.com</div>
         </div>
         <div>
@@ -62,44 +73,71 @@ export default function Contact() {
             alt="globe"
             className="mx-auto mb-2"
           />
-          <div className="font-bold">Website</div>
+          <div className="font-bold">{t("contacts.website")}</div>
           <div>www.revie.com</div>
         </div>
       </div>
       <h2 className="text-center font-tthxb text-3xl tracking-wide mt-10 mb-3 text-red-700">
-        SEND ME AN EMAIL
+        {t("contacts.title2")}
       </h2>
       <p className="text-center opensans text-lg font-bold tracking-2 mb-5">
-        I'M VERY RESPONSIVE TO MESSAGES
+        {t("contacts.description2")}
       </p>
-      <form className="flex flex-col max-w-5xl mx-auto opensans">
-        <div className="flex justify-between my-5">
-          <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            className={`w-full mr-4 rounded-xl p-2 text-white placeholder:text-white bg-zinc-800 border-2 border-zinc-400 focus:border-red-600 focus:outline-none ${styles.auto_fill}`}
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            className={`w-full ml-4 rounded-xl p-2 text-white placeholder:text-white bg-zinc-800 border-2 border-zinc-400 focus:border-red-600 focus:outline-none ${styles.auto_fill}`}
-          />
+      <form
+        className="flex flex-col max-w-5xl mx-auto opensans"
+        onSubmit={handleSubmite}
+      >
+        <div className="flex justify-between mt-5 mb-2">
+          <div className="w-full mr-4">
+            <input
+              type="text"
+              name="name"
+              placeholder={t("contacts.name")}
+              onChange={handleChange}
+              className={`w-full rounded-xl p-2 text-white placeholder:text-white bg-zinc-800 border-2 border-zinc-400 focus:border-red-600 focus:outline-none ${styles.auto_fill}`}
+            />
+            {submited && errors.name && (
+              <p className="text-red-500 mb-2 ml-3">{errors.name}</p>
+            )}
+          </div>
+          <div className="w-full ml-4">
+            <input
+              type="email"
+              name="email"
+              placeholder={t("contacts.email")}
+              onChange={handleChange}
+              className={`w-full rounded-xl p-2 text-white placeholder:text-white bg-zinc-800 border-2 border-zinc-400 focus:border-red-600 focus:outline-none ${styles.auto_fill}`}
+            />
+            {submited && errors.email && (
+              <p className="text-red-500 mb-2 ml-3">{errors.email}</p>
+            )}
+          </div>
         </div>
         <input
           type="text"
           name="subject"
-          placeholder="Subject"
-          className={`rounded-xl p-2 text-white placeholder:text-white bg-zinc-800 border-2 border-zinc-400 my-5 focus:border-red-600 focus:outline-none ${styles.auto_fill}`}
+          placeholder={t("contacts.subject")}
+          onChange={handleChange}
+          className={`rounded-xl p-2 text-white placeholder:text-white bg-zinc-800 border-2 border-zinc-400 mt-5 mb-2 focus:border-red-600 focus:outline-none ${styles.auto_fill}`}
         />
+        {submited && errors.subject && (
+          <p className="text-red-500 mb-2 ml-3">{errors.subject}</p>
+        )}
         <textarea
           name="message"
-          placeholder="Message"
-          className={`rounded-xl p-2 text-white placeholder:text-white bg-zinc-800 border-2 border-zinc-400 my-5 resize-none focus:border-red-600 focus:outline-none ${styles.auto_fill}`}
+          placeholder={t("contacts.message")}
+          onChange={handleChange}
+          className={`rounded-xl p-2 h-40 text-white placeholder:text-white bg-zinc-800 border-2 border-zinc-400 mt-5 mb-2 resize-none focus:border-red-600 focus:outline-none ${styles.auto_fill}`}
         />
-        <button className="bg-red-600 rounded-xl p-2 font-bold max-w-60 hover:shadow-red-center">
-          Send message
+        <p className="mb-2 ml-3">{values.message.length}/50</p>
+        {submited && errors.message && (
+          <p className="text-red-500 mb-2 ml-3">{errors.message}</p>
+        )}
+        <button
+          type="submit"
+          className="bg-red-600 rounded-xl mt-5 p-2 font-bold max-w-60 hover:shadow-red-center"
+        >
+          {t("contacts.btn")}
         </button>
       </form>
     </>

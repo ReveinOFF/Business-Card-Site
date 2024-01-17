@@ -39,5 +39,27 @@
   "notfound": {
     "text": "PAGE NOT FOUND",
     "btn": "GO BACK"
+  },
+  "contacts": {
+    "title": "CONTACTS",
+    "description": "I'M AT YOUR SERVICES",
+    "call": "Call Me On",
+    "living": "Living",
+    "country": "Ukraine",
+    "email": "E-mail",
+    "website": "Website",
+    "title2": "SEND ME AN EMAIL",
+    "description2": "I'M VERY RESPONSIVE TO MESSAGES",
+    "name": "Name",
+    "subject": "Subject",
+    "message": "Message",
+    "btn": "Send message"
+  },
+  "validation": {
+    "low": "This field cannot be empty",
+    "name_hig": "The name's too long",
+    "email": "Incorrectly entered mail",
+    "subject_hig": "The subject is too long",
+    "message_hig": "The message is too long"
   }
 }
