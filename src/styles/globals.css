@@ -6,6 +6,10 @@
   text-shadow: -1px -1px 0px #fca5a5, 1px 1px 0px #ff005a;
 }
 
+.title {
+  @apply text-center font-tthxb text-5xl tracking-wide my-3 text-red-700;
+}
+
 @layer components {
   .opensans {
     @apply font-sans tracking-widest;

@@ -66,7 +66,7 @@ export default function useForm() {
           [name]: t("validation.low"),
         });
       }
-      if (value.length > 50) {
+      if (value.length > 150) {
         setErrors({
           ...errors,
           [name]: t("validation.message_hig"),

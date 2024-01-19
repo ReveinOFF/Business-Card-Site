@@ -12,7 +12,7 @@ export default function Portfolio() {
         <meta name="description" content={t("meta.portfolio.description")} />
         <meta name="keywords" content={t("meta.portfolio.keywords")} />
       </Head>
-      <div></div>
+      <h1 className="title">PORTFOLIO</h1>
     </>
   );
 }

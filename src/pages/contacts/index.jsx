@@ -4,6 +4,7 @@ import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import styles from "./contactsStyle.module.css";
 import useForm from "@/hooks/form/useForm";
+import CustomButton from "@/components/button/button";
 
 export default function Contact() {
   const { t } = useTranslation();
@@ -25,9 +26,7 @@ export default function Contact() {
         <meta name="description" content={t("meta.contacts.description")} />
         <meta name="keywords" content={t("meta.contacts.keywords")} />
       </Head>
-      <h1 className="text-center font-tthxb text-5xl tracking-wide my-3 text-red-700">
-        {t("contacts.title")}
-      </h1>
+      <h1 className="title">{t("contacts.title")}</h1>
       <p className="text-center opensans text-lg font-bold tracking-2 mb-10">
         {t("contacts.description")}
       </p>
@@ -77,7 +76,10 @@ export default function Contact() {
           <div>www.revie.com</div>
         </div>
       </div>
-      <h2 className="text-center font-tthxb text-3xl tracking-wide mt-10 mb-3 text-red-700">
+      <h2
+        id="form"
+        className="text-center font-tthxb text-3xl tracking-wide mt-10 mb-3 text-red-700"
+      >
         {t("contacts.title2")}
       </h2>
       <p className="text-center opensans text-lg font-bold tracking-2 mb-5">
@@ -129,16 +131,11 @@ export default function Contact() {
           onChange={handleChange}
           className={`rounded-xl p-2 h-40 text-white placeholder:text-white bg-zinc-800 border-2 border-zinc-400 mt-5 mb-2 resize-none focus:border-red-600 focus:outline-none ${styles.auto_fill}`}
         />
-        <p className="mb-2 ml-3">{values.message.length}/50</p>
+        <p className="mb-2 ml-3">{values.message.length}/150</p>
         {submited && errors.message && (
           <p className="text-red-500 mb-2 ml-3">{errors.message}</p>
         )}
-        <button
-          type="submit"
-          className="bg-red-600 rounded-xl mt-5 p-2 font-bold max-w-60 hover:shadow-red-center"
-        >
-          {t("contacts.btn")}
-        </button>
+        <CustomButton>{t("contacts.btn")}</CustomButton>
       </form>
     </>
   );
