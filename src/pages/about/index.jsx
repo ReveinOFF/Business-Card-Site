@@ -63,7 +63,7 @@ export default function About() {
       </div>
       <div className="flex justify-around gap-10">
         <div className="w-1/2">
-          <h3 className={styles.info_t}>Education</h3>
+          <h3 className={`${styles.info_t} opensans`}>Education</h3>
           <div className={styles.info_d}>
             <div className="[&_>div:not(:last-of-type)]:pb-5">
               <div className="pl-10 opensans before:h-full before:left-0 before:absolute relative before:bg-red-600 before:w-0.5 h-full before:rounded-lg before:content-['']">
@@ -108,7 +108,7 @@ export default function About() {
           </div>
         </div>
         <div className="w-1/2">
-          <h3 className={styles.info_t}>Experience</h3>
+          <h3 className={`${styles.info_t} opensans`}>Experience</h3>
           <div className={styles.info_d}>
             <div className="[&_>div:not(:last-of-type)]:pb-5">
               <div className="pl-10 opensans before:h-full before:left-0 before:absolute relative before:bg-red-600 before:w-0.5 h-full before:rounded-lg before:content-['']">

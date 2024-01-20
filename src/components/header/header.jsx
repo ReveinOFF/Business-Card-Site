@@ -153,7 +153,11 @@ export default function Header() {
           <div className="text-center text-2xl font-tthb">REVIE</div>
         </div>
         <nav className="m-5 opensans">
-          <Link href="/" className={styles.sidebar_pages}>
+          <Link
+            href="/"
+            className={styles.sidebar_pages}
+            onClick={() => setShowBurger(false)}
+          >
             <Image
               src="/images/header/home.svg"
               width="25"
@@ -163,7 +167,11 @@ export default function Header() {
             />
             <div>{t("header.home")}</div>
           </Link>
-          <Link href="/about" className={styles.sidebar_pages}>
+          <Link
+            href="/about"
+            className={styles.sidebar_pages}
+            onClick={() => setShowBurger(false)}
+          >
             <Image
               src="/images/header/about.svg"
               width="25"
@@ -173,7 +181,11 @@ export default function Header() {
             />
             <div>{t("header.about")}</div>
           </Link>
-          <Link href="/contacts" className={styles.sidebar_pages}>
+          <Link
+            href="/contacts"
+            className={styles.sidebar_pages}
+            onClick={() => setShowBurger(false)}
+          >
             <Image
               src="/images/header/contacts.svg"
               width="25"
@@ -183,7 +195,11 @@ export default function Header() {
             />
             <div>{t("header.contacts")}</div>
           </Link>
-          <Link href="/portfolio" className={styles.sidebar_pages}>
+          <Link
+            href="/portfolio"
+            className={styles.sidebar_pages}
+            onClick={() => setShowBurger(false)}
+          >
             <Image
               src="/images/header/portfolio.svg"
               width="25"

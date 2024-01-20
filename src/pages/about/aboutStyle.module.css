@@ -3,7 +3,7 @@
 }
 
 .info_t {
-  @apply opensans font-bold text-xl mb-5;
+  @apply font-bold text-xl mb-5;
 }
 
 .info_d {

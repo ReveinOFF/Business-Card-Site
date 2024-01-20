@@ -14,6 +14,7 @@ module.exports = {
         "load-2": "0 0 10px 4px rgba(81, 81, 81, 0.3) inset",
       },
       fontSize: {
+        "mb-ms": "8rem",
         "mega-size": "17rem",
       },
       letterSpacing: {
