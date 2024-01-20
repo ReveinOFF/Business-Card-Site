@@ -54,11 +54,71 @@ export default function About() {
           <span className="font-bold">Email:</span> ronnieplayyt@gmail.com
         </div>
       </div>
-      <div className="flex gap-10">
+      <div className="flex gap-10 mb-10">
         <CustomButton>Download CV</CustomButton>
         <Link href="/contacts#form">
           <CustomButton>Hire Me</CustomButton>
         </Link>
+      </div>
+      <div className="flex justify-around gap-10">
+        <div className="w-1/2">
+          <h3 className={styles.info_t}>Education</h3>
+          <div className={styles.info_d}>
+            <div className="[&_>div:not(:last-of-type)]:pb-5">
+              <div className="pl-10 opensans before:h-full before:left-0 before:absolute relative before:bg-red-600 before:w-0.5 h-full before:rounded-lg before:content-['']">
+                <div className="w-5 h-5 rounded-full bg-red-600 absolute -left-[9px] -top-1"></div>
+                <div className="mb-3">2013 - 2015</div>
+                <div className="font-bold">Master In Computer Science</div>
+                <div>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
+                  soluta quidem fugit corporis explicabo minima libero quis aut
+                  deserunt atque eius laudantium rem, pariatur, magni, nostrum
+                  consectetur ipsum iusto fugiat.
+                </div>
+              </div>
+              <div className="pl-10 opensans before:h-full before:left-0 before:absolute relative before:bg-red-600 before:w-0.5 h-full before:rounded-lg before:content-['']">
+                <div className="w-5 h-5 rounded-full bg-red-600 absolute -left-[9px] -top-1"></div>
+                <div className="mb-3">2013 - 2015</div>
+                <div className="font-bold">Master In Computer Science</div>
+                <div>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
+                  soluta quidem fugit corporis explicabo minima libero quis aut
+                  deserunt atque eius laudantium rem, pariatur, magni, nostrum
+                  consectetur ipsum iusto fugiat.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="w-1/2">
+          <h3 className={styles.info_t}>Experience</h3>
+          <div className={styles.info_d}>
+            <div className="[&_>div:not(:last-of-type)]:pb-5">
+              <div className="pl-10 opensans before:h-full before:left-0 before:absolute relative before:bg-red-600 before:w-0.5 h-full before:rounded-lg before:content-['']">
+                <div className="w-5 h-5 rounded-full bg-red-600 absolute -left-[9px] -top-1"></div>
+                <div className="mb-3">2013 - 2015</div>
+                <div className="font-bold">Master In Computer Science</div>
+                <div>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
+                  soluta quidem fugit corporis explicabo minima libero quis aut
+                  deserunt atque eius laudantium rem, pariatur, magni, nostrum
+                  consectetur ipsum iusto fugiat.
+                </div>
+              </div>
+              <div className="pl-10 opensans before:h-full before:left-0 before:absolute relative before:bg-red-600 before:w-0.5 h-full before:rounded-lg before:content-['']">
+                <div className="w-5 h-5 rounded-full bg-red-600 absolute -left-[9px] -top-1"></div>
+                <div className="mb-3">2013 - 2015</div>
+                <div className="font-bold">Master In Computer Science</div>
+                <div>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
+                  soluta quidem fugit corporis explicabo minima libero quis aut
+                  deserunt atque eius laudantium rem, pariatur, magni, nostrum
+                  consectetur ipsum iusto fugiat.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

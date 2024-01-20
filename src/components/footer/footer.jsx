@@ -12,8 +12,8 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer>
-      <div className="p-5 hidden sm:flex mt-5 bg-zinc-800 flex-col items-center">
+    <footer className="mt-10">
+      <div className="p-5 hidden sm:flex bg-zinc-800 flex-col items-center">
         <h1 className="mb-3 text-2xl font-tthxb">REVIE</h1>
         <div className="text-center max-w-4xl mb-3 text opensans">
           {t("footer.top")}

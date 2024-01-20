@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  scrollbar-color: rgb(220 38 38) rgb(63 63 70);
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-zinc-700;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-red-600;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-red-700;
+}
+
 .outlined-text {
   text-shadow: -1px -1px 0px #fca5a5, 1px 1px 0px #ff005a;
 }

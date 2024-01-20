@@ -41,7 +41,7 @@ export default function Header() {
   }, [showLng]);
 
   return (
-    <header className="sticky bg-zinc-950 bg-opacity-95 top-3 flex items-center justify-between px-10 py-5 mx-5 border-2 border-red-700 rounded-lg my-5">
+    <header className="sticky z-10 bg-zinc-950 bg-opacity-95 top-3 flex items-center justify-between px-10 py-5 mx-5 border-2 border-red-700 rounded-lg my-5">
       <Link href="/" className="focus:outline-none">
         <Image
           src="/images/header/avatar.png"

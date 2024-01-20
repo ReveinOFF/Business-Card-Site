@@ -1,3 +1,11 @@
 .table_col {
   @apply border-b-2 border-gray-600 border-opacity-20 p-3;
 }
+
+.info_t {
+  @apply opensans font-bold text-xl mb-5;
+}
+
+.info_d {
+  @apply h-96 bg-zinc-800 rounded-lg p-5 overflow-y-auto;
+}
