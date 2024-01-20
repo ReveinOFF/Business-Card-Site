@@ -25,7 +25,7 @@ export default function Document(props) {
         <meta name="msapplication-TileColor" content="#2b5797" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
-      <body className="bg-zinc-950 text-white scroll-smooth">
+      <body className="bg-zinc-950 text-white">
         <Main />
         <NextScript />
       </body>
