@@ -5,6 +5,7 @@ import { useMemo } from "react";
 import styles from "./aboutStyle.module.css";
 import CustomButton from "@/components/button/button";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function About() {
   const { t } = useTranslation();
@@ -67,7 +68,15 @@ export default function About() {
             <div className="[&_>div:not(:last-of-type)]:pb-5">
               <div className="pl-10 opensans before:h-full before:left-0 before:absolute relative before:bg-red-600 before:w-0.5 h-full before:rounded-lg before:content-['']">
                 <div className="w-5 h-5 rounded-full bg-red-600 absolute -left-[9px] -top-1"></div>
-                <div className="mb-3">2013 - 2015</div>
+                <div className="mb-3 flex items-center">
+                  <Image
+                    src="/images/about/calendar.svg"
+                    width="15"
+                    height="15"
+                    className="mr-2"
+                  />
+                  2013 - 2015
+                </div>
                 <div className="font-bold">Master In Computer Science</div>
                 <div>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
@@ -78,7 +87,15 @@ export default function About() {
               </div>
               <div className="pl-10 opensans before:h-full before:left-0 before:absolute relative before:bg-red-600 before:w-0.5 h-full before:rounded-lg before:content-['']">
                 <div className="w-5 h-5 rounded-full bg-red-600 absolute -left-[9px] -top-1"></div>
-                <div className="mb-3">2013 - 2015</div>
+                <div className="mb-3 flex items-center">
+                  <Image
+                    src="/images/about/calendar.svg"
+                    width="15"
+                    height="15"
+                    className="mr-2"
+                  />
+                  2013 - 2015
+                </div>
                 <div className="font-bold">Master In Computer Science</div>
                 <div>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
@@ -96,7 +113,15 @@ export default function About() {
             <div className="[&_>div:not(:last-of-type)]:pb-5">
               <div className="pl-10 opensans before:h-full before:left-0 before:absolute relative before:bg-red-600 before:w-0.5 h-full before:rounded-lg before:content-['']">
                 <div className="w-5 h-5 rounded-full bg-red-600 absolute -left-[9px] -top-1"></div>
-                <div className="mb-3">2013 - 2015</div>
+                <div className="mb-3 flex items-center">
+                  <Image
+                    src="/images/about/calendar.svg"
+                    width="15"
+                    height="15"
+                    className="mr-2"
+                  />
+                  2013 - 2015
+                </div>
                 <div className="font-bold">Master In Computer Science</div>
                 <div>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
@@ -107,7 +132,15 @@ export default function About() {
               </div>
               <div className="pl-10 opensans before:h-full before:left-0 before:absolute relative before:bg-red-600 before:w-0.5 h-full before:rounded-lg before:content-['']">
                 <div className="w-5 h-5 rounded-full bg-red-600 absolute -left-[9px] -top-1"></div>
-                <div className="mb-3">2013 - 2015</div>
+                <div className="mb-3 flex items-center">
+                  <Image
+                    src="/images/about/calendar.svg"
+                    width="15"
+                    height="15"
+                    className="mr-2"
+                  />
+                  2013 - 2015
+                </div>
                 <div className="font-bold">Master In Computer Science</div>
                 <div>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga

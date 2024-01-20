@@ -30,7 +30,7 @@ export default function Contact() {
       <p className="text-center opensans text-lg font-bold tracking-2 mb-10">
         {t("contacts.description")}
       </p>
-      <div className="flex justify-evenly text-center opensans items-end">
+      <div className="grid grid-cols-2 grid-rows-2 gap-5 sm:gap-0 sm:flex sm:justify-evenly text-center opensans items-end">
         <div>
           <Image
             src="/images/contacts/call.svg"
@@ -44,14 +44,14 @@ export default function Contact() {
         </div>
         <div>
           <Image
-            src="/images/contacts/point.svg"
+            src="/images/contacts/globe.svg"
             width="30"
             height="30"
-            alt="point"
+            alt="globe"
             className="mx-auto mb-2"
           />
-          <div className="font-bold">{t("contacts.living")}</div>
-          <div>{t("contacts.country")}</div>
+          <div className="font-bold">{t("contacts.website")}</div>
+          <div>www.revie.com</div>
         </div>
         <div>
           <Image
@@ -66,14 +66,14 @@ export default function Contact() {
         </div>
         <div>
           <Image
-            src="/images/contacts/globe.svg"
+            src="/images/contacts/point.svg"
             width="30"
             height="30"
-            alt="globe"
+            alt="point"
             className="mx-auto mb-2"
           />
-          <div className="font-bold">{t("contacts.website")}</div>
-          <div>www.revie.com</div>
+          <div className="font-bold">{t("contacts.living")}</div>
+          <div>{t("contacts.country")}</div>
         </div>
       </div>
       <h2
@@ -89,7 +89,7 @@ export default function Contact() {
         className="flex flex-col max-w-5xl mx-auto opensans"
         onSubmit={handleSubmite}
       >
-        <div className="flex justify-between mt-5 mb-2">
+        <div className="flex flex-col sm:flex-row sm:justify-between mt-5">
           <div className="w-full mr-4">
             <input
               type="text"
@@ -102,7 +102,7 @@ export default function Contact() {
               <p className="text-red-500 mb-2 ml-3">{errors.name}</p>
             )}
           </div>
-          <div className="w-full ml-4">
+          <div className="w-full mt-5 sm:ml-4 sm:mt-0">
             <input
               type="email"
               name="email"
@@ -120,7 +120,7 @@ export default function Contact() {
           name="subject"
           placeholder={t("contacts.subject")}
           onChange={handleChange}
-          className={`rounded-xl p-2 text-white placeholder:text-white bg-zinc-800 border-2 border-zinc-400 mt-5 mb-2 focus:border-red-600 focus:outline-none ${styles.auto_fill}`}
+          className={`rounded-xl p-2 text-white placeholder:text-white bg-zinc-800 border-2 border-zinc-400 mt-5 focus:border-red-600 focus:outline-none ${styles.auto_fill}`}
         />
         {submited && errors.subject && (
           <p className="text-red-500 mb-2 ml-3">{errors.subject}</p>
@@ -129,13 +129,15 @@ export default function Contact() {
           name="message"
           placeholder={t("contacts.message")}
           onChange={handleChange}
-          className={`rounded-xl p-2 h-40 text-white placeholder:text-white bg-zinc-800 border-2 border-zinc-400 mt-5 mb-2 resize-none focus:border-red-600 focus:outline-none ${styles.auto_fill}`}
+          className={`rounded-xl p-2 h-40 text-white placeholder:text-white bg-zinc-800 border-2 border-zinc-400 mt-5 resize-none focus:border-red-600 focus:outline-none ${styles.auto_fill}`}
         />
         <p className="mb-2 ml-3">{values.message.length}/150</p>
         {submited && errors.message && (
           <p className="text-red-500 mb-2 ml-3">{errors.message}</p>
         )}
-        <CustomButton>{t("contacts.btn")}</CustomButton>
+        <CustomButton className="mx-auto sm:ml-0">
+          {t("contacts.btn")}
+        </CustomButton>
       </form>
     </>
   );
