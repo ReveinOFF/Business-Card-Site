@@ -61,13 +61,13 @@ export default function About() {
           <CustomButton>Hire Me</CustomButton>
         </Link>
       </div>
-      <div className="flex justify-around gap-10">
+      <div className="flex justify-around gap-10 mb-10">
         <div className="w-1/2">
           <h3 className={`${styles.info_t} opensans`}>Education</h3>
           <div className={styles.info_d}>
-            <div className="[&_>div:not(:last-of-type)]:pb-5">
-              <div className="pl-10 opensans before:h-full before:left-0 before:absolute relative before:bg-red-600 before:w-0.5 h-full before:rounded-lg before:content-['']">
-                <div className="w-5 h-5 rounded-full bg-red-600 absolute -left-[9px] -top-1"></div>
+            <div className="[&_>div:not(:last-of-type)]:pb-5 h-full overflow-y-auto pr-3 py-px">
+              <div className="pl-10 opensans before:h-full before:left-[9px] before:absolute relative before:bg-red-600 before:w-0.5 before:rounded-lg before:content-['']">
+                <div className="w-5 h-5 rounded-full bg-red-600 absolute left-0 -top-px"></div>
                 <div className="mb-3 flex items-center">
                   <Image
                     src="/images/about/calendar.svg"
@@ -85,8 +85,8 @@ export default function About() {
                   consectetur ipsum iusto fugiat.
                 </div>
               </div>
-              <div className="pl-10 opensans before:h-full before:left-0 before:absolute relative before:bg-red-600 before:w-0.5 h-full before:rounded-lg before:content-['']">
-                <div className="w-5 h-5 rounded-full bg-red-600 absolute -left-[9px] -top-1"></div>
+              <div className="pl-10 opensans before:h-full before:left-[9px] before:absolute relative before:bg-red-600 before:w-0.5 before:rounded-lg before:content-['']">
+                <div className="w-5 h-5 rounded-full bg-red-600 absolute left-0 -top-px"></div>
                 <div className="mb-3 flex items-center">
                   <Image
                     src="/images/about/calendar.svg"
@@ -110,9 +110,9 @@ export default function About() {
         <div className="w-1/2">
           <h3 className={`${styles.info_t} opensans`}>Experience</h3>
           <div className={styles.info_d}>
-            <div className="[&_>div:not(:last-of-type)]:pb-5">
-              <div className="pl-10 opensans before:h-full before:left-0 before:absolute relative before:bg-red-600 before:w-0.5 h-full before:rounded-lg before:content-['']">
-                <div className="w-5 h-5 rounded-full bg-red-600 absolute -left-[9px] -top-1"></div>
+            <div className="[&_>div:not(:last-of-type)]:pb-5 h-full overflow-y-auto pr-3 py-px">
+              <div className="pl-10 opensans before:h-full before:left-[9px] before:absolute relative before:bg-red-600 before:w-0.5 before:rounded-lg before:content-['']">
+                <div className="w-5 h-5 rounded-full bg-red-600 absolute left-0 -top-px"></div>
                 <div className="mb-3 flex items-center">
                   <Image
                     src="/images/about/calendar.svg"
@@ -130,8 +130,8 @@ export default function About() {
                   consectetur ipsum iusto fugiat.
                 </div>
               </div>
-              <div className="pl-10 opensans before:h-full before:left-0 before:absolute relative before:bg-red-600 before:w-0.5 h-full before:rounded-lg before:content-['']">
-                <div className="w-5 h-5 rounded-full bg-red-600 absolute -left-[9px] -top-1"></div>
+              <div className="pl-10 opensans before:h-full before:left-[9px] before:absolute relative before:bg-red-600 before:w-0.5 before:rounded-lg before:content-['']">
+                <div className="w-5 h-5 rounded-full bg-red-600 absolute left-0 -top-px"></div>
                 <div className="mb-3 flex items-center">
                   <Image
                     src="/images/about/calendar.svg"
@@ -152,6 +152,53 @@ export default function About() {
             </div>
           </div>
         </div>
+      </div>
+      <div>
+        <h3 className={`${styles.info_t} opensans`}>Skills</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Language IT/Technologi</th>
+              <th>Frameworks/Library</th>
+              <th>Database</th>
+              <th>Other</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>C#/.NET</td>
+              <td>React JS</td>
+              <td>MSSQL</td>
+            </tr>
+            <tr>
+              <td>JS/TS/Ajax/jQuery</td>
+              <td>Angular</td>
+              <td>MySQL/PhpMyAdmin</td>
+            </tr>
+            <tr>
+              <td>DHTML/HTML</td>
+              <td>Next JS</td>
+              <td>PostgreSQL</td>
+            </tr>
+            <tr>
+              <td>CSS/SCSS/SASS</td>
+              <td>Node JS</td>
+              <td>MongoDG</td>
+            </tr>
+            <tr>
+              <td>PHP</td>
+              <td>Bootstrap/Tailwind</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Gulp</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Entity Framework/Core</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </>
   );
