@@ -51,38 +51,48 @@ export default function Header() {
         />
       </Link>
       <nav className="hidden md:block font-tthb">
-        <Link
-          className={`${styles.page_select} ${
-            pathname == "/" ? "text-red-700" : "hover:text-red-500"
-          }`}
-          href="/"
-        >
-          {t("header.home").toLocaleUpperCase()}
-        </Link>
-        <Link
-          className={`${styles.page_select} ${
-            pathname == "/about" ? "text-red-700" : "hover:text-red-500"
-          }`}
-          href="/about"
-        >
-          {t("header.about").toLocaleUpperCase()}
-        </Link>
-        <Link
-          className={`${styles.page_select} ${
-            pathname == "/contacts" ? "text-red-700" : "hover:text-red-500"
-          }`}
-          href="/contacts"
-        >
-          {t("header.contacts").toLocaleUpperCase()}
-        </Link>
-        <Link
-          className={`${styles.page_select} ${
-            pathname == "/portfolio" ? "text-red-700" : "hover:text-red-500"
-          }`}
-          href="/portfolio"
-        >
-          {t("header.portfolio").toLocaleUpperCase()}
-        </Link>
+        <ul className="flex">
+          <li>
+            <Link
+              className={`${styles.page_select} ${
+                pathname == "/" ? "text-red-700" : "hover:text-red-500"
+              }`}
+              href="/"
+            >
+              {t("header.home").toLocaleUpperCase()}
+            </Link>
+          </li>
+          <li>
+            <Link
+              className={`${styles.page_select} ${
+                pathname == "/about" ? "text-red-700" : "hover:text-red-500"
+              }`}
+              href="/about"
+            >
+              {t("header.about").toLocaleUpperCase()}
+            </Link>
+          </li>
+          <li>
+            <Link
+              className={`${styles.page_select} ${
+                pathname == "/contacts" ? "text-red-700" : "hover:text-red-500"
+              }`}
+              href="/contacts"
+            >
+              {t("header.contacts").toLocaleUpperCase()}
+            </Link>
+          </li>
+          <li>
+            <Link
+              className={`${styles.page_select} ${
+                pathname == "/portfolio" ? "text-red-700" : "hover:text-red-500"
+              }`}
+              href="/portfolio"
+            >
+              {t("header.portfolio").toLocaleUpperCase()}
+            </Link>
+          </li>
+        </ul>
       </nav>
       <div className={`relative hidden md:block font-tthb`}>
         <button
@@ -96,7 +106,7 @@ export default function Header() {
           {router.locale.toLocaleUpperCase()}
         </button>
         <div
-          className={`c-lng border-2 rounded-lg absolute mt-2 bg-black transition duration-200 ${
+          className={`c-lng border-2 rounded-lg absolute top-full bg-black transition duration-200 ${
             showLng
               ? "opacity-100 translate-y-0"
               : "opacity-0 -translate-y-1/3 pointer-events-none"
@@ -141,7 +151,7 @@ export default function Header() {
       >
         <div>
           <button
-            className="border-4 hover:border-red-500 transition h-8 rounded-full m-5 mt-8 p-3 py-4"
+            className="border-2 hover:border-red-500 transition h-8 rounded-full m-5 mt-8 p-3 py-4"
             onClick={() => {
               setShowBurger(false);
               setIsScroll(true);
@@ -150,7 +160,7 @@ export default function Header() {
             <div className="w-7 rotate-45 -translate-y-0.5 bg-white h-0.5 rounded-lg"></div>
             <div className="w-7 -rotate-45 -translate-y-1 bg-white h-0.5 rounded-lg"></div>
           </button>
-          <div className="text-center text-2xl font-tthb">REVIE</div>
+          <div className="text-center text-2xl font-tthb">REVEIN_OFF</div>
         </div>
         <nav className="m-5 opensans">
           <Link

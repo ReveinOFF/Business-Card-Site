@@ -14,7 +14,7 @@ export default function Footer() {
   return (
     <footer className="mt-10">
       <div className="p-5 hidden sm:flex bg-zinc-800 flex-col items-center">
-        <h1 className="mb-3 text-2xl font-tthxb">REVIE</h1>
+        <h1 className="mb-3 text-2xl font-tthxb">REVEIN_OFF</h1>
         <div className="text-center max-w-4xl mb-3 text opensans">
           {t("footer.top")}
         </div>
@@ -59,7 +59,7 @@ export default function Footer() {
       </div>
       <div className="p-5 flex justify-center sm:justify-between bg-zinc-900 my-0 opensans">
         <div>
-          &#169; {year} Revie, {t("footer.bottom")}
+          &#169; {year} ReveinOFF, {t("footer.bottom")}
         </div>
         <div className="hidden sm:block">
           <Link className={styles.footer_pages} href="/">

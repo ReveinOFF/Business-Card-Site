@@ -7,27 +7,27 @@
   },
   "meta": {
     "home": {
-      "title": "Revie - Welcome",
+      "title": "Welcome - ReveinOFF",
       "description": "Explore the world of my ideas, projects and inspiration on the homepage of my business card site and blog.",
       "keywords": "dddda"
     },
     "about": {
-      "title": "Revie - Find out about me",
+      "title": "Find out about me - ReveinOFF",
       "description": "Open the 'About Me' page to learn more about my creative journey, hobbies and goals. Welcome to my virtual world!",
       "keywords": "dddda"
     },
     "contacts": {
-      "title": "Revie - Contact me",
+      "title": "Contact me - ReveinOFF",
       "description": "On the contact page you will find everything you need to contact me. Share your questions, suggestions or just write hello!",
       "keywords": "dddda"
     },
     "portfolio": {
-      "title": "Revie - My portfolio",
+      "title": "My portfolio - ReveinOFF",
       "description": "An overview of my best projects, ideas and achievements. Immerse yourself in the world of my work presented in the portfolio on this page.",
       "keywords": "dddda"
     },
     "notfound": {
-      "title": "Revie - Page not found",
+      "title": "Page not found - ReveinOFF",
       "description": "Something went wrong and we couldn't find this page, please try again later or contact the owner.",
       "keywords": "dddda"
     }
@@ -61,5 +61,25 @@
     "email": "Incorrectly entered mail",
     "subject_hig": "The subject is too long",
     "message_hig": "The message is too long"
+  },
+  "about": {
+    "title": "ABOUT ME",
+    "desc_top": "My name is Roman Pomyanovsky, I am a",
+    "desc_top2": "Web Developer",
+    "desc_bot": "I specialize in creating intuitive and creative web applications. My credo is not just to write code but to craft web solutions with character. From adaptive interfaces to innovative functional features, in my world, every line of code is a step towards a unique user experience. Let's build the web world together, where every detail matters!",
+    "me_birth": "Birthday:",
+    "me_age": "Age:",
+    "me_country": "Country:",
+    "country": "Ukraine",
+    "me_city": "City:",
+    "city": "Rivne",
+    "me_phone": "Phone:",
+    "dwnl": "Download CV",
+    "hire": "Hire Me",
+    "info_1": "Education",
+    "info_2": "Experience",
+    "info_3": "Skills",
+    "info_3_l": "Web development",
+    "info_3_r": "Databases & Back-end"
   }
 }

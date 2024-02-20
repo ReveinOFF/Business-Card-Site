@@ -59,7 +59,7 @@ function App({ Component, pageProps }) {
         {router.pathname !== "/404" && <Footer />}
       </div>
       <button
-        className={`fixed bottom-10 right-10 p-4 leading-relaxed rounded-lg border-[3px] hover:border-red-600 bg-zinc-700 transition-all ${
+        className={`fixed bottom-16 right-10 p-4 leading-relaxed rounded-lg border-[3px] hover:border-red-600 bg-zinc-700 transition-all ${
           scrollTop > 200 ? "visible opacity-100" : "invisible opacity-0"
         }`}
         onClick={() => (refDiv.current.scrollTop = 0)}
