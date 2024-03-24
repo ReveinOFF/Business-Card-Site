@@ -14,7 +14,9 @@ export default function Footer() {
   return (
     <footer className="mt-10">
       <div className="p-5 hidden sm:flex bg-zinc-800 flex-col items-center">
-        <h1 className="mb-3 text-2xl font-tthxb">REVEIN_OFF</h1>
+        <h1 className="mb-3 text-2xl font-tthxb [&_>span]:text-red-500 overline decoration-red-500">
+          <span>_</span>REVEIN<span>_</span>OFF<span>_</span>
+        </h1>
         <div className="text-center max-w-4xl mb-3 text opensans">
           {t("footer.top")}
         </div>

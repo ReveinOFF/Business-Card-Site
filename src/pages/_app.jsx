@@ -53,7 +53,7 @@ function App({ Component, pageProps }) {
         } h-screen grid grid-rows-[auto_1fr_auto] scroll-smooth`}
       >
         {router.pathname !== "/404" && <Header />}
-        <main className="mx-5">
+        <main className="mx-5 fsm:mx-20">
           <Component {...pageProps} />
         </main>
         {router.pathname !== "/404" && <Footer />}

@@ -35,7 +35,7 @@ export default function NotFound() {
           onClick={() => router.back()}
           className="border-2 opensans border-red-600 hover:text-red-300 hover:border-red-300 transition-colors font-bold text-red-600 py-2 px-6"
         >
-          GO BACK
+          {t("notfound.btn")}
         </button>
       </div>
     </>

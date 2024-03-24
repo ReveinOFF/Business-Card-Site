@@ -147,7 +147,7 @@ export default function Header() {
           showBurger
             ? "visible translate-x-0 opacity-100"
             : "invisible translate-x-96 opacity-0"
-        } fixed md:hidden shadow-2xl right-0 transition-all top-0 bottom-0 w-80 bg-zinc-900 grid grid-rows-[auto_1fr_auto]`}
+        } fixed md:hidden shadow-2xl right-0 transition-all top-0 bottom-0 w-full min_sm:w-80 bg-zinc-900 grid grid-rows-[auto_1fr_auto]`}
       >
         <div>
           <button
@@ -160,7 +160,9 @@ export default function Header() {
             <div className="w-7 rotate-45 -translate-y-0.5 bg-white h-0.5 rounded-lg"></div>
             <div className="w-7 -rotate-45 -translate-y-1 bg-white h-0.5 rounded-lg"></div>
           </button>
-          <div className="text-center text-2xl font-tthb">REVEIN_OFF</div>
+          <div className="text-center text-2xl font-tthb [&_>span]:text-red-500 overline decoration-red-500">
+            <span>_</span>REVEIN<span>_</span>OFF<span>_</span>
+          </div>
         </div>
         <nav className="m-5 opensans">
           <Link

@@ -26,6 +26,10 @@ module.exports = {
         tthb: ["var(--font-tthoves-bold)"],
         tthxb: ["var(--font-tthoves-xbold)"],
       },
+      screens: {
+        fsm: "450px",
+        min_sm: "320px",
+      },
     },
   },
   plugins: [],

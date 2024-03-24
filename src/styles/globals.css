@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .opensans {
+    @apply font-sans tracking-widest;
+  }
+}
+
 * {
   scrollbar-color: rgb(220 38 38) rgb(63 63 70);
   scrollbar-width: thin;
@@ -29,11 +35,13 @@
 }
 
 .title {
-  @apply text-center font-tthxb text-5xl tracking-wide my-3 text-red-700;
+  @apply text-center font-tthxb text-3xl tracking-wide my-3 text-red-700 fsm:text-5xl;
 }
 
-@layer components {
-  .opensans {
-    @apply font-sans tracking-widest;
-  }
+.subtitle {
+  @apply text-center font-tthxb text-xl tracking-wide mt-10 mb-3 text-red-700 fsm:text-3xl;
+}
+
+.p {
+  @apply text-center opensans text-base font-bold tracking-2 fsm:text-lg;
 }

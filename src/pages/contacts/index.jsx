@@ -27,10 +27,8 @@ export default function Contact() {
         <meta name="keywords" content={t("meta.contacts.keywords")} />
       </Head>
       <h1 className="title">{t("contacts.title")}</h1>
-      <p className="text-center opensans text-lg font-bold tracking-2 mb-10">
-        {t("contacts.description")}
-      </p>
-      <div className="grid grid-cols-2 grid-rows-2 gap-5 sm:gap-0 sm:flex sm:justify-evenly text-center opensans items-end">
+      <p className="p mb-10">{t("contacts.description")}</p>
+      <div className="grid grid-cols-1 grid-rows-4 gap-5 sm:gap-0 sm:flex sm:justify-evenly min_sm:grid-rows-2 min_sm:grid-cols-2 text-center opensans items-end">
         <div>
           <Image
             src="/images/contacts/call.svg"
@@ -76,15 +74,10 @@ export default function Contact() {
           <div>{t("contacts.country")}</div>
         </div>
       </div>
-      <h2
-        id="form"
-        className="text-center font-tthxb text-3xl tracking-wide mt-10 mb-3 text-red-700"
-      >
+      <h2 id="form" className="subtitle">
         {t("contacts.title2")}
       </h2>
-      <p className="text-center opensans text-lg font-bold tracking-2 mb-5">
-        {t("contacts.description2")}
-      </p>
+      <p className="p mb-5">{t("contacts.description2")}</p>
       <form
         className="flex flex-col max-w-5xl mx-auto opensans"
         onSubmit={handleSubmite}
