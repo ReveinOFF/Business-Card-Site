@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://revie.com
+Host: https://reveinoff.com
 
 # Sitemaps
-Sitemap: https://revie.com/sitemap.xml
+Sitemap: https://reveinoff.com/sitemap.xml

@@ -23,7 +23,7 @@ export default function Document(props) {
           href="/favicon-16x16.png"
         />
         <meta name="msapplication-TileColor" content="#2b5797" />
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#000000" />
       </Head>
       <body className="bg-zinc-950 text-white">
         <Main />

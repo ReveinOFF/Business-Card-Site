@@ -25,36 +25,51 @@ export default function About() {
         <meta name="keywords" content={t("meta.about.keywords")} />
       </Head>
       <h1 className="title">{t("about.title")}</h1>
-      <h2 className="opensans font-bold text-2xl mb-3">
-        {t("about.desc_top")}{" "}
-        <span className="text-red-500">{t("about.desc_top2")}</span>
-      </h2>
-      <p className="opensans text-balance mb-10 max-w-2xl">
-        {t("about.desc_bot")}
-      </p>
-      <div className="grid grid-cols-2 gap-10 max-w-2xl opensans mb-10">
-        <div className={styles.table_col}>
-          <span className="font-bold">{t("about.me_birth")}</span> 31.01.2003
+      <div className="grid grid-cols-[minmax(0,_1fr)_minmax(0,_0.8fr)] gap-5">
+        <div>
+          <h2 className="opensans font-bold text-2xl mb-3">
+            {t("about.desc_top")}{" "}
+            <span className="text-red-500 text-nowrap">
+              {t("about.desc_top2")}
+            </span>
+          </h2>
+          <p className="opensans text-balance mb-10 max-w-2xl">
+            {t("about.desc_bot")}
+          </p>
+          <div className="grid grid-cols-2 gap-10 max-w-2xl opensans">
+            <div className={styles.table_col}>
+              <span className="font-bold">{t("about.me_birth")}</span>{" "}
+              31.01.2003
+            </div>
+            <div className={styles.table_col}>
+              <span className="font-bold">{t("about.me_age")}</span> {age}
+            </div>
+            <div className={styles.table_col}>
+              <span className="font-bold">{t("about.me_country")}</span>{" "}
+              {t("about.country")}
+            </div>
+            <div className={styles.table_col}>
+              <span className="font-bold">{t("about.me_city")}</span>{" "}
+              {t("about.city")}
+            </div>
+            <div className={styles.table_col}>
+              <span className="font-bold">{t("about.me_phone")}</span>{" "}
+              +380681369836
+            </div>
+            <div className={styles.table_col}>
+              <span className="font-bold">Email:</span> reveinoff@gmail.com
+            </div>
+          </div>
         </div>
-        <div className={styles.table_col}>
-          <span className="font-bold">{t("about.me_age")}</span> {age}
-        </div>
-        <div className={styles.table_col}>
-          <span className="font-bold">{t("about.me_country")}</span>{" "}
-          {t("about.country")}
-        </div>
-        <div className={styles.table_col}>
-          <span className="font-bold">{t("about.me_city")}</span>{" "}
-          {t("about.city")}
-        </div>
-        <div className={styles.table_col}>
-          <span className="font-bold">{t("about.me_phone")}</span> +380681369836
-        </div>
-        <div className={styles.table_col}>
-          <span className="font-bold">Email:</span> reveinoff@gmail.com
-        </div>
+        <Image
+          src="/images/test.jpg"
+          width="300"
+          height="300"
+          alt="about me"
+          className="h-full mx-auto object-cover"
+        />
       </div>
-      <div className="flex gap-10 mb-10">
+      <div className="flex gap-10 mt-5 mb-10">
         <CustomButton>{t("about.dwnl")}</CustomButton>
         <Link href="/contacts#form">
           <CustomButton>{t("about.hire")}</CustomButton>
