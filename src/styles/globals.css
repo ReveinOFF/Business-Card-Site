@@ -9,8 +9,19 @@
 }
 
 * {
+  box-sizing: border-box;
   scrollbar-color: rgb(220 38 38) rgb(63 63 70);
   scrollbar-width: thin;
+}
+
+a {
+  text-decoration: none;
+  border: 0;
+  background-color: transparent;
+}
+
+button {
+  user-select: none;
 }
 
 ::-webkit-scrollbar {

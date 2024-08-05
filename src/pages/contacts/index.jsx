@@ -36,9 +36,10 @@ export default function Contact() {
             height="30"
             alt="call"
             className="mx-auto mb-2"
+            draggable={false}
           />
           <div className="font-bold">{t("contacts.call")}</div>
-          <div>+380977852315</div>
+          <div>+380681369836</div>
         </div>
         <div>
           <Image
@@ -47,9 +48,10 @@ export default function Contact() {
             height="30"
             alt="globe"
             className="mx-auto mb-2"
+            draggable={false}
           />
           <div className="font-bold">{t("contacts.website")}</div>
-          <div>www.revie.com</div>
+          <div>www.reveinoff.com</div>
         </div>
         <div>
           <Image
@@ -58,9 +60,10 @@ export default function Contact() {
             height="30"
             alt="email"
             className="mx-auto mb-2"
+            draggable={false}
           />
           <div className="font-bold">{t("contacts.email")}</div>
-          <div>ronnieplayyt@gmail.com</div>
+          <div>reveinoff@gmail.com</div>
         </div>
         <div>
           <Image
@@ -69,6 +72,7 @@ export default function Contact() {
             height="30"
             alt="point"
             className="mx-auto mb-2"
+            draggable={false}
           />
           <div className="font-bold">{t("contacts.living")}</div>
           <div>{t("contacts.country")}</div>

@@ -22,7 +22,7 @@ export default function NotFound() {
       </Head>
       <div className="flex flex-col justify-center items-center h-screen">
         <h1
-          className={`text-mb-ms sm:text-mega-size text-transparent tracking-low font-bold outlined-text text-zinc-950 text-center ${Montserrat.className}`}
+          className={`text-mb-ms sm:text-mega-size cursor-default select-none text-transparent tracking-low font-bold outlined-text text-zinc-950 text-center ${Montserrat.className}`}
         >
           404
         </h1>

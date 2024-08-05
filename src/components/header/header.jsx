@@ -10,6 +10,7 @@ export default function Header() {
   const [showLng, setShowLng] = useState(false);
   const [showMobLng, setShowMobLng] = useState(false);
   const [showBurger, setShowBurger] = useState(false);
+  // const [scroll, setScroll] = useState(document.body.scrollTop);
   const { t } = useTranslation();
   const router = useRouter();
   const { pathname, query } = router;
@@ -40,14 +41,31 @@ export default function Header() {
     };
   }, [showLng]);
 
+  const scrollHandler = (e) => {
+    console.log(e);
+    console.log(document.body.scrollTop);
+    console.log(document.body.scrollHeight);
+  };
+
+  useEffect(() => {
+    console.log("e0");
+    document.addEventListener("scroll", (e) => {
+      console.log("e1");
+    });
+    window.addEventListener("scroll", (e) => {
+      console.log("e2");
+    });
+  }, []);
+
   return (
-    <header className="sticky z-10 bg-zinc-950 bg-opacity-95 top-3 flex items-center justify-between px-10 py-5 mx-5 border-2 border-red-700 rounded-lg my-5">
+    <header className="sticky select-none z-10 top-0 bg-opacity-50 flex items-center justify-between px-5 fsm:px-20 py-10">
       <Link href="/" className="focus:outline-none">
         <Image
           src="/images/header/avatar.png"
           alt="avatar"
           width="50"
           height="50"
+          draggable={false}
         />
       </Link>
       <nav className="hidden md:block font-tthb">
@@ -176,6 +194,7 @@ export default function Header() {
               height="25"
               alt="home"
               className="mr-3"
+              draggable={false}
             />
             <div>{t("header.home")}</div>
           </Link>
@@ -190,6 +209,7 @@ export default function Header() {
               height="25"
               alt="about"
               className="mr-3"
+              draggable={false}
             />
             <div>{t("header.about")}</div>
           </Link>
@@ -204,6 +224,7 @@ export default function Header() {
               height="25"
               alt="contacts"
               className="mr-3"
+              draggable={false}
             />
             <div>{t("header.contacts")}</div>
           </Link>
@@ -218,6 +239,7 @@ export default function Header() {
               height="25"
               alt="portfolio"
               className="mr-3"
+              draggable={false}
             />
             <div>{t("header.portfolio")}</div>
           </Link>
@@ -250,6 +272,7 @@ export default function Header() {
               height="25"
               alt="language"
               className="mr-3"
+              draggable={false}
             />
             <div className="text-xl">{router.locale.toLocaleUpperCase()}</div>
             <Image
@@ -260,6 +283,7 @@ export default function Header() {
               className={`ml-auto transition-all ${
                 showMobLng ? "rotate-180" : "rotate-0"
               }`}
+              draggable={false}
             />
           </button>
         </div>

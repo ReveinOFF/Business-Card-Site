@@ -40,6 +40,21 @@ function App({ Component, pageProps }) {
     };
   }, [router]);
 
+  // const scrollHandler = (e) => {
+  //   console.log(e);
+  //   console.log(document.body.scrollTop);
+  //   console.log(document.body.scrollHeight);
+  // };
+
+  useEffect(() => {
+    document.addEventListener("scroll", (e) => {
+      console.log("e");
+    });
+    window.addEventListener("scroll", (e) => {
+      console.log("e2");
+    });
+  }, []);
+
   return (
     <ScrollContext.Provider value={setIsScroll}>
       {loading && <Loading />}
@@ -53,7 +68,7 @@ function App({ Component, pageProps }) {
         } h-screen grid grid-rows-[auto_1fr_auto] scroll-smooth`}
       >
         {router.pathname !== "/404" && <Header />}
-        <main className="mx-5 fsm:mx-20">
+        <main className="mx-5 fsm:mx-20 mb-10">
           <Component {...pageProps} />
         </main>
         {router.pathname !== "/404" && <Footer />}
@@ -70,6 +85,7 @@ function App({ Component, pageProps }) {
           height="15"
           alt="arrow"
           className="ml-auto transition-all"
+          draggable={false}
         />
       </button>
     </ScrollContext.Provider>

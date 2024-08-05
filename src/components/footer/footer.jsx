@@ -12,9 +12,9 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="mt-10">
-      <div className="p-5 hidden sm:flex bg-zinc-800 flex-col items-center">
-        <h1 className="mb-3 text-2xl font-tthxb [&_>span]:text-red-500 overline decoration-red-500">
+    <footer>
+      <div className="p-5 hidden min_sm:flex bg-zinc-800 flex-col items-center">
+        <h1 className="mb-3 select-none text-2xl font-tthxb [&_>span]:text-red-500 overline decoration-red-500">
           <span>_</span>REVEIN<span>_</span>OFF<span>_</span>
         </h1>
         <div className="text-center max-w-4xl mb-3 text opensans">
@@ -22,7 +22,7 @@ export default function Footer() {
         </div>
         <div className="flex">
           <Link
-            href="https://github.com/RonniePlay"
+            href="https://github.com/ReveinOFF"
             target="_blank"
             className={`mr-3 ${styles.svg}`}
           >
@@ -31,6 +31,7 @@ export default function Footer() {
               width="40"
               height="40"
               alt="github"
+              draggable={false}
             />
           </Link>
           <Link
@@ -43,10 +44,11 @@ export default function Footer() {
               width="40"
               height="40"
               alt="instagram"
+              draggable={false}
             />
           </Link>
           <Link
-            href="mailto:ronnieplayyt@gmail.com"
+            href="mailto:reveinoff@gmail.com"
             target="_blank"
             className={styles.svg}
           >
@@ -55,6 +57,7 @@ export default function Footer() {
               width="40"
               height="40"
               alt="gmail"
+              draggable={false}
             />
           </Link>
         </div>

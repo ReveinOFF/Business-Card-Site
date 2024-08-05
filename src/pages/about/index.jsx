@@ -65,8 +65,9 @@ export default function About() {
           src="/images/test.jpg"
           width="300"
           height="300"
-          alt="about me"
+          alt="me"
           className="h-full mx-auto object-cover"
+          draggable={false}
         />
       </div>
       <div className="flex gap-10 mt-5 mb-10">
@@ -90,14 +91,12 @@ export default function About() {
                     alt="calendar"
                     className="mr-2"
                   />
-                  2013 - 2015
+                  2020 - 2022
                 </div>
-                <div className="font-bold">Master In Computer Science</div>
+                <div className="font-bold">{t("about.inf_1_f11")}</div>
                 <div>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
-                  soluta quidem fugit corporis explicabo minima libero quis aut
-                  deserunt atque eius laudantium rem, pariatur, magni, nostrum
-                  consectetur ipsum iusto fugiat.
+                  <div>{t("about.inf_1_f12")}</div>
+                  <div>{t("about.inf_1_f13")}</div>
                 </div>
               </div>
               <div className="pl-10 opensans before:h-full before:left-[9px] before:absolute relative before:bg-red-600 before:w-0.5 before:rounded-lg before:content-['']">
@@ -110,14 +109,12 @@ export default function About() {
                     alt="calendar"
                     className="mr-2"
                   />
-                  2013 - 2015
+                  2018 - 2021
                 </div>
-                <div className="font-bold">Master In Computer Science</div>
+                <div className="font-bold">{t("about.inf_1_f21")}</div>
                 <div>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
-                  soluta quidem fugit corporis explicabo minima libero quis aut
-                  deserunt atque eius laudantium rem, pariatur, magni, nostrum
-                  consectetur ipsum iusto fugiat.
+                  <div>{t("about.inf_1_f22")}</div>
+                  <div>{t("about.inf_1_f23")}</div>
                 </div>
               </div>
             </div>
@@ -213,7 +210,7 @@ export default function About() {
             </tr>
             <tr>
               <td>Gulp</td>
-              <td>...</td>
+              <td>Nest JS</td>
             </tr>
             <tr>
               <td>HTML / DHTML</td>
