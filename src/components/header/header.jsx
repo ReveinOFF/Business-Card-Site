@@ -6,11 +6,10 @@ import { useRouter } from "next/router.js";
 import { ScrollContext } from "@/pages/_app";
 import styles from "./headerStyle.module.css";
 
-export default function Header() {
+export default function Header({ scroll }) {
   const [showLng, setShowLng] = useState(false);
   const [showMobLng, setShowMobLng] = useState(false);
   const [showBurger, setShowBurger] = useState(false);
-  // const [scroll, setScroll] = useState(document.body.scrollTop);
   const { t } = useTranslation();
   const router = useRouter();
   const { pathname, query } = router;
@@ -41,24 +40,12 @@ export default function Header() {
     };
   }, [showLng]);
 
-  const scrollHandler = (e) => {
-    console.log(e);
-    console.log(document.body.scrollTop);
-    console.log(document.body.scrollHeight);
-  };
-
-  useEffect(() => {
-    console.log("e0");
-    document.addEventListener("scroll", (e) => {
-      console.log("e1");
-    });
-    window.addEventListener("scroll", (e) => {
-      console.log("e2");
-    });
-  }, []);
-
   return (
-    <header className="sticky select-none z-10 top-0 bg-opacity-50 flex items-center justify-between px-5 fsm:px-20 py-10">
+    <header
+      className={`sticky select-none z-10 top-0 bg-opacity-80 flex items-center justify-between px-5 fsm:px-20 py-5 transition ${
+        scroll > 40 ? "bg-zinc-900" : ""
+      }`}
+    >
       <Link href="/" className="focus:outline-none">
         <Image
           src="/images/header/avatar.png"
@@ -155,7 +142,10 @@ export default function Header() {
         <div className="w-7 bg-white h-0.5 rounded-lg"></div>
       </button>
       <div
-        onClick={() => setShowBurger(false)}
+        onClick={() => {
+          setShowBurger(false);
+          setIsScroll(true);
+        }}
         className={`${
           showBurger ? "visible opacity-100" : "invisible opacity-0"
         } fixed cursor-pointer md:hidden transition-opacity right-0 left-0 top-0 bottom-0 bg-zinc-600 bg-opacity-70`}

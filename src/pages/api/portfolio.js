@@ -1,28 +1,25 @@
-const { Pool } = require("pg");
+import { AppDataSource } from "../../lib/ormconfig";
 
-const pool = new Pool({
-  user: "your_username",
-  host: "localhost",
-  database: "your_database",
-  password: "your_password",
-  port: 5432,
-});
+export default async function handler(req, res) {
+  if (!AppDataSource.isInitialized) {
+    await AppDataSource.initialize();
+  }
 
-export default function handler(req, res) {
+  const portfolioRepo = AppDataSource.getRepository(Portfolio);
+
   switch (req.method) {
-    case "GET":
-      let query = "SELECT * FROM pg_database;";
-      let res = pool.query(query);
-      res.status(200).json({ message: "This is a GET request" });
-      break;
-    case "POST":
-      res.status(200).json({ message: "This is a POST request" });
-      break;
-    case "PUT":
-      res.status(200).json({ message: "This is a PUT request" });
-      break;
-    case "DELETE":
-      res.status(200).json({ message: "This is a DELETE request" });
-      break;
+    case "GET": {
+      try {
+        const portfolios = await portfolioRepo.find({
+          relations: ["productType"],
+        });
+        return res.status(200).json(portfolios);
+      } catch (error) {
+        console.error("Error handling request:", error.message);
+        return res.status(500).json({ message: "Internal server error" });
+      }
+    }
+    default:
+      return res.status(405).json({ message: "Method not allowed" });
   }
 }

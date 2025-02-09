@@ -40,21 +40,6 @@ function App({ Component, pageProps }) {
     };
   }, [router]);
 
-  // const scrollHandler = (e) => {
-  //   console.log(e);
-  //   console.log(document.body.scrollTop);
-  //   console.log(document.body.scrollHeight);
-  // };
-
-  useEffect(() => {
-    document.addEventListener("scroll", (e) => {
-      console.log("e");
-    });
-    window.addEventListener("scroll", (e) => {
-      console.log("e2");
-    });
-  }, []);
-
   return (
     <ScrollContext.Provider value={setIsScroll}>
       {loading && <Loading />}
@@ -67,7 +52,7 @@ function App({ Component, pageProps }) {
           OpenSans.variable
         } h-screen grid grid-rows-[auto_1fr_auto] scroll-smooth`}
       >
-        {router.pathname !== "/404" && <Header />}
+        {router.pathname !== "/404" && <Header scroll={scrollTop} />}
         <main className="mx-5 fsm:mx-20 mb-10">
           <Component {...pageProps} />
         </main>
