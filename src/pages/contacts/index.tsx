@@ -11,7 +11,7 @@ export default function Contact() {
   const { values, errors, submited, checkValue, handleChange, setSubmited } =
     useForm();
 
-  const handleSubmite = (e) => {
+  const handleSubmite = (e: any) => {
     e.preventDefault();
     setSubmited(true);
     if (!checkValue()) {
@@ -140,7 +140,7 @@ export default function Contact() {
   );
 }
 
-export async function getStaticProps({ locale }) {
+export async function getStaticProps({ locale }: any) {
   return {
     props: {
       ...(await serverSideTranslations(locale)),

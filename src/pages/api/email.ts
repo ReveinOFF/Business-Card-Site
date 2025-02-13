@@ -1,5 +1,6 @@
 require("dotenv").config();
 import nodemailer from "nodemailer";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
@@ -9,7 +10,10 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-export default async function handler(req, res) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   if (req.method === "POST") {
     const { name, email, subject, message } = req.body;
 
@@ -28,7 +32,6 @@ export default async function handler(req, res) {
 
       res.status(200).json({ message: "Email sent successfully!" });
     } catch (error) {
-      console.error("Error sending email:", error.message);
       res.status(500).json({ message: "Error sending email" });
     }
   } else {

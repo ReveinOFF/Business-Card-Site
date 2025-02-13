@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
-import { useTranslation, i18n } from "next-i18next";
+import { useTranslation, i18n, I18n } from "next-i18next";
 import { useRouter } from "next/router.js";
 import { ScrollContext } from "@/pages/_app";
 import styles from "./headerStyle.module.css";
 
-export default function Header({ scroll }) {
+export default function Header({ scroll }: any) {
   const [showLng, setShowLng] = useState(false);
   const [showMobLng, setShowMobLng] = useState(false);
   const [showBurger, setShowBurger] = useState(false);
@@ -15,15 +15,21 @@ export default function Header({ scroll }) {
   const { pathname, query } = router;
   const setIsScroll = useContext(ScrollContext);
 
-  const changeShowLng = (e) => {
+  if (!setIsScroll) {
+    throw new Error(
+      "useScrollContext must be used within a ScrollContext.Provider"
+    );
+  }
+
+  const changeShowLng = (e: any) => {
     if (!e.target.closest(".c-lng")) setShowLng(false);
   };
 
-  const changeLanguage = (lang) => {
+  const changeLanguage = (lang: any) => {
     router.push({ pathname, query }, undefined, {
       locale: lang,
     });
-    i18n.changeLanguage(lang);
+    (i18n as I18n).changeLanguage(lang);
     setShowLng(false);
     setShowMobLng(false);
   };
@@ -108,7 +114,7 @@ export default function Header({ scroll }) {
           }`}
           onClick={() => setShowLng(!showLng)}
         >
-          {router.locale.toLocaleUpperCase()}
+          {router.locale?.toLocaleUpperCase()}
         </button>
         <div
           className={`c-lng border-2 rounded-lg absolute top-full bg-black transition duration-200 ${
@@ -118,7 +124,7 @@ export default function Header({ scroll }) {
           }`}
         >
           {router.locales
-            .filter((item) => item !== router.locale)
+            ?.filter((item) => item !== router.locale)
             .map((item, index) => (
               <button
                 onClick={() => changeLanguage(item)}
@@ -237,7 +243,7 @@ export default function Header({ scroll }) {
         <div className="m-5 mt-0 relative font-tthb">
           <div className="absolute bottom-20 w-full">
             {router.locales
-              .filter((item) => item !== router.locale)
+              ?.filter((item) => item !== router.locale)
               .map((item, index) => (
                 <button
                   className={`block text-xl bg-zinc-700 hover:bg-zinc-600 w-full mb-3 last:mb-0 rounded-lg py-2 transition-all ${
@@ -264,7 +270,7 @@ export default function Header({ scroll }) {
               className="mr-3"
               draggable={false}
             />
-            <div className="text-xl">{router.locale.toLocaleUpperCase()}</div>
+            <div className="text-xl">{router.locale?.toLocaleUpperCase()}</div>
             <Image
               src="/images/header/arrow.svg"
               width="15"

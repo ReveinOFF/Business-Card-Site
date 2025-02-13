@@ -13,13 +13,13 @@ export default function useForm() {
   const [values, setValues] = useState(data);
   const [errors, setErrors] = useState(data);
   const [submited, setSubmited] = useState(false);
-  const [time, setTime] = useState();
+  const [time, setTime] = useState<any>();
 
   const checkValue = () => {
     return Object.values(values).some((value) => value === "");
   };
 
-  const validate = (name, value) => {
+  const validate = (name: string, value: string) => {
     if (name === "name") {
       if (value.length < 1) {
         setErrors({
@@ -75,7 +75,7 @@ export default function useForm() {
     }
   };
 
-  const handleChange = (event) => {
+  const handleChange = (event: any) => {
     checkValue();
     clearTimeout(time);
 

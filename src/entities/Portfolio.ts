@@ -11,18 +11,21 @@ import { PortfolioType } from "./PortfolioType";
 @Entity()
 export class Portfolio {
   @PrimaryGeneratedColumn("uuid")
-  id;
+  id!: string;
 
-  @Column("varchar", { length: 50 })
-  title;
+  @Column("varchar", { length: 50, nullable: false })
+  title!: string;
+
+  @Column("varchar", { length: 50, unique: true, nullable: false })
+  imageName!: string;
 
   @Column("text")
-  description;
+  description!: string;
 
   @ManyToOne(() => PortfolioType, { nullable: false })
   @JoinColumn()
-  portfolioType;
+  portfolioType!: PortfolioType;
 
   @CreateDateColumn()
-  created_at;
+  created_at!: Date;
 }

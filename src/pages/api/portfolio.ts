@@ -1,6 +1,11 @@
+import { NextApiRequest, NextApiResponse } from "next";
 import { AppDataSource } from "../../lib/ormconfig";
+import { Portfolio } from "@/entities/Portfolio";
 
-export default async function handler(req, res) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   if (!AppDataSource.isInitialized) {
     await AppDataSource.initialize();
   }
@@ -11,11 +16,10 @@ export default async function handler(req, res) {
     case "GET": {
       try {
         const portfolios = await portfolioRepo.find({
-          relations: ["productType"],
+          relations: ["portfolioType"],
         });
         return res.status(200).json(portfolios);
       } catch (error) {
-        console.error("Error handling request:", error.message);
         return res.status(500).json({ message: "Internal server error" });
       }
     }

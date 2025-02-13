@@ -3,18 +3,28 @@ import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 import { appWithTranslation } from "next-i18next";
 import { useRouter } from "next/router";
-import { createContext, useEffect, useRef, useState } from "react";
 import Loading from "./loading";
 import { OpenSans, TTHovesB, TTHovesXB } from "@/utils/fonts";
 import Image from "next/image";
+import { AppProps } from "next/app";
+import {
+  createContext,
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
-export const ScrollContext = createContext();
+export const ScrollContext = createContext<Dispatch<
+  SetStateAction<boolean>
+> | null>(null);
 
-function App({ Component, pageProps }) {
+function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  const [isScroll, setIsScroll] = useState(true);
+  const [isScroll, setIsScroll] = useState<boolean>(true);
   const [loading, setLoading] = useState(false);
-  const refDiv = useRef();
+  const refDiv = useRef<any>(null);
   const [scrollTop, setScrollTop] = useState(refDiv?.current?.scrollTop || 0);
 
   useEffect(() => {
@@ -45,7 +55,7 @@ function App({ Component, pageProps }) {
       {loading && <Loading />}
       <div
         ref={refDiv}
-        onScroll={(e) => setScrollTop(e.target.scrollTop)}
+        onScroll={(e: any) => setScrollTop(e.target.scrollTop)}
         className={`${isScroll ? "overflow-auto" : "overflow-hidden"} ${
           TTHovesB.variable
         } ${TTHovesXB.variable} ${
