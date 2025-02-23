@@ -63,7 +63,9 @@ function App({ Component, pageProps }: AppProps) {
         } h-screen grid grid-rows-[auto_1fr_auto] scroll-smooth`}
       >
         {router.pathname !== "/404" && <Header scroll={scrollTop} />}
-        <main className="mx-5 fsm:mx-20 mb-10">
+        <main
+          className={`mx-5 fsm:mx-20${router.pathname !== "/404" && " mb-10"}`}
+        >
           <Component {...pageProps} />
         </main>
         {router.pathname !== "/404" && <Footer />}

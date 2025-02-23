@@ -87,5 +87,12 @@
     "info_3_l": "Web development",
     "info_3_r": "Databases & Back-end"
   },
-  "portfolio": "PORTFOLIO"
+  "portfolio": {
+    "title": "PORTFOLIO",
+    "type": {
+      "online_store": "Online store",
+      "business_site": "Business site",
+      "social_network": "Social network"
+    }
+  }
 }

@@ -22,13 +22,13 @@ export default async function handler(
     }
 
     try {
-      await transporter.sendMail({
-        from: `"${name}" <${email}>`,
-        to: process.env.EMAIL_USER,
-        subject: subject,
-        text: message,
-        html: `<h1>${name}</h1><p>${message}</p><p>Email: ${email}</p>`,
-      });
+      // await transporter.sendMail({
+      //   from: `"${name}" <${email}>`,
+      //   to: process.env.EMAIL_USER,
+      //   subject: subject,
+      //   text: message,
+      //   html: `<h1>${name}</h1><p>${message}</p><p>Email: ${email}</p>`,
+      // });
 
       res.status(200).json({ message: "Email sent successfully!" });
     } catch (error) {

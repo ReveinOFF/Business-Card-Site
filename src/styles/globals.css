@@ -46,7 +46,7 @@ button {
 }
 
 .title {
-  @apply text-center font-tthxb text-3xl tracking-wide my-3 text-red-700 fsm:text-5xl;
+  @apply text-center font-tthxb text-3xl tracking-wide my-3 text-red-600 fsm:text-5xl;
 }
 
 .subtitle {

@@ -87,5 +87,12 @@
     "info_3_l": "Веб-розробка",
     "info_3_r": "Бази даних та Back-end"
   },
-  "portfolio": "ПОРТФОЛІО"
+  "portfolio": {
+    "title": "ПОРТФОЛІО",
+    "type": {
+      "online_store": "Інтернет-магазин",
+      "business_site": "Сайт візитка",
+      "social_network": "Соціальна мережа"
+    }
+  }
 }

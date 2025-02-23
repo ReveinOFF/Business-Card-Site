@@ -5,17 +5,20 @@ import Image from "next/image";
 import styles from "./contactsStyle.module.css";
 import useForm from "@/hooks/form/useForm";
 import CustomButton from "@/components/button/button";
+import axios from "axios";
 
 export default function Contact() {
   const { t } = useTranslation();
-  const { values, errors, submited, checkValue, handleChange, setSubmited } =
+  const { values, errors, submited, isValid, handleChange, setSubmited } =
     useForm();
 
-  const handleSubmite = (e: any) => {
+  const handleSubmite = async (e: any) => {
     e.preventDefault();
+
     setSubmited(true);
-    if (!checkValue()) {
-      console.log("done");
+
+    if (isValid) {
+      await axios.post("http://localhost:3000/api/email", values);
     }
   };
 
@@ -85,6 +88,7 @@ export default function Contact() {
       <form
         className="flex flex-col max-w-5xl mx-auto opensans"
         onSubmit={handleSubmite}
+        noValidate
       >
         <div className="flex flex-col sm:flex-row sm:justify-between mt-5">
           <div className="w-full mr-4">
@@ -128,7 +132,7 @@ export default function Contact() {
           onChange={handleChange}
           className={`rounded-xl p-2 h-40 text-white placeholder:text-white bg-zinc-800 border-2 border-zinc-400 mt-5 resize-none focus:border-red-600 focus:outline-none ${styles.auto_fill}`}
         />
-        <p className="mb-2 ml-3">{values.message.length}/150</p>
+        <p className="mb-2 ml-3">{values.message?.length || "0"}/150</p>
         {submited && errors.message && (
           <p className="text-red-500 mb-2 ml-3">{errors.message}</p>
         )}

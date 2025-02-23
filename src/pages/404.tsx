@@ -20,7 +20,7 @@ export default function NotFound() {
         <meta name="description" content={t("meta.notfound.description")} />
         <meta name="keywords" content={t("meta.notfound.keywords")} />
       </Head>
-      <div className="flex flex-col justify-center items-center h-screen">
+      <div className="flex flex-col justify-center items-center h-screen relative">
         <h1
           className={`text-mb-ms sm:text-mega-size cursor-default select-none text-transparent tracking-low font-bold outlined-text text-zinc-950 text-center ${Montserrat.className}`}
         >
